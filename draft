@@ -1,32 +1,29 @@
 import random
 
-sel = ['scissors', 'rock', 'paper']
-result = {0: 'win.', 1: 'lose.', 2: 'time.'}
+options = ['scissors', 'rock', 'paper']
+outcomes = {0: 'You won!', 1: 'You lost!', 2: 'It was a tie.'}
 
-def checkWin(user, com):
+def play_game(player, computer):
+    if player not in options:
+        print('Invalid input. Please try again.')
+        return False
 
-    if not user in sel:
-       print('Invalid input. Please enter again.')
-       return False
-
-    print(f'user ( {user} vs {com} ) computer')
-    if user == com:
+    print(f'You chose {player}. The computer chose {computer}.')
+    if player == computer:
         state = 2
-    elif user == 'scissors' and com == 'rock':
-        state = 1
-    elif user == 'rock' and com == 'paper':
-        state = 1
-    elif user == 'paper' and com == 'scissors':
+    elif (player == 'scissors' and computer == 'rock') or \
+         (player == 'rock' and computer == 'paper') or \
+         (player == 'paper' and computer == 'scissors'):
         state = 1
     else:
         state = 0
-    print(result[state])
+    print(outcomes[state])
     return True
 
 
 while True:
-    user = input("scissors, rock, paper : ")
-    com = sel[random.randint(0, 2)]
-    if checkWin(user, com):
+    player_choice = input('Choose rock, paper, or scissors: ')
+    computer_choice = random.choice(options)
+    if play_game(player_choice, computer_choice):
         break
 print('-------------------------------------------\n')
