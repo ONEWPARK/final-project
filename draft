@@ -1,14 +1,14 @@
 import random
 
 options = ['scissors', 'rock', 'paper']
-outcomes = {0: 'You won!', 1: 'You lost!', 2: 'It was a tie.'}
+outcomes = {0: 'You won!', 1: 'You lost!', 2: 'It was a tie.'} #Great use of a dictionary
 
 def play_game(player, computer):
     if player not in options:
-        print('Invalid input. Please try again.')
+        print('Invalid input. Please try again.') # good use of error handling, however can you write it such that it changes user input to upper case/lower case to do better error handling? 
         return False
 
-    print(f'You chose {player}. The computer chose {computer}.')
+    print(f'You chose {player}. The computer chose {computer}.') # Well done on making this concise. It could have been easily a lot of numbers of linbe but you handdled it pretty well.
     if player == computer:
         state = 2
     elif (player == 'scissors' and computer == 'rock') or \
@@ -22,8 +22,10 @@ def play_game(player, computer):
 
 
 while True:
-    player_choice = input('Choose rock, paper, or scissors: ')
+    player_choice = input('Choose rock, paper, or scissors: ') # I did not understand at first how you would call this function that you defined in the beginning but now it makes sense. 
     computer_choice = random.choice(options)
     if play_game(player_choice, computer_choice):
         break
 print('-------------------------------------------\n')
+
+#Overall : Great Work Onyou! Love it. 
