@@ -6,9 +6,10 @@ outcomes = {0: 'You won!', 1: 'You lost!', 2: 'It was a tie.'}
 def play_game(player, computer):
     if player not in options:
         print('Invalid input. Please try again.')
-        return False
+        return False 
+#comment: I think this part is very good, it avoids return anything wrong. 
 
-    print(f'You chose {player}. The computer chose {computer}.')
+    print(f'You chose {player}. The computer chose {computer}.') #comment: what does the "f" means here?
     if player == computer:
         state = 2
     elif (player == 'scissors' and computer == 'rock') or \
@@ -27,3 +28,7 @@ while True:
     if play_game(player_choice, computer_choice):
         break
 print('-------------------------------------------\n')
+
+#comment: I think you have a very good structure at this point. You have mentioned that you want to
+#calculate who wins three time first. For further coding, I think you can make use number to represent
+#number of times of winning, then once the number reaches the point, the game ends. 
