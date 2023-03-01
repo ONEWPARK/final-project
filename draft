@@ -3,11 +3,17 @@ import random
 options = ['scissors', 'rock', 'paper']
 outcomes = {0: 'You won!', 1: 'You lost!', 2: 'It was a tie.'}
 
+#I love this game! I would suggest changing "player" maybe to "human" or "choice"? "Player" was just
+#confusing because I thought it was another opponent until I read the whole code, but that's just a personal
+#preference. If it makes sense to you, that's fine!
 def play_game(player, computer):
     if player not in options:
         print('Invalid input. Please try again.')
         return False
-
+    
+#Maybe to make the game more interesting have it go for 3 rounds instead of 1. It could be fun to have a
+#little tournament against the computer. Since it's your draft, I don't know what else you're planning to do
+#but those were just my suggestions!
     print(f'You chose {player}. The computer chose {computer}.')
     if player == computer:
         state = 2
@@ -27,3 +33,6 @@ while True:
     if play_game(player_choice, computer_choice):
         break
 print('-------------------------------------------\n')
+#I really like this last print statement, it makes everything look more cleaner in the terminal. I forget you
+#can do this. I'll probably use that for my project. Again, I love your idea/game! Sorry I don't have much
+#feedback, everything looked great to me!
